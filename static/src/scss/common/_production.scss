@@ -1,0 +1,181 @@
+// Production parameters widget
+
+// Stantard vertical padding for parameters
+$param-vertical-padding: .5em;
+
+// Top padding added for some grouping cases
+$param-add-top-padding: 2.5em;
+
+// Multilpe grouped productions parameter hover color
+$group-hover-bg-color: rgb(255, 234, 99);
+
+$parameters-fill-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='1em' width='.3em'><text x='0' y='.7em'>.</text></svg>");
+
+@mixin param-with-add-top-padding {
+    &.param-item {
+        &.group {
+            &:hover {
+                background: linear-gradient(transparent #{$param-add-top-padding}, $group-hover-bg-color calc(100% - #{$param-add-top-padding})) !important;
+            }
+        }
+    }
+
+    td {
+        padding-top: $param-vertical-padding + $param-add-top-padding !important;
+    }
+}
+
+table.production-parameters {
+    width: 100%;
+    font-size: .9rem;
+
+    tr {
+        &.param-item {
+            &.group {
+
+                .name {
+                    width: 1%;
+                    white-space: nowrap;
+                }
+
+                >td {
+                    &.value {
+                        text-align: center;
+                    }
+
+                    &.price {
+                        &:not(:first-child) {
+                            text-align: center;
+                        }
+                    }
+
+                }
+
+                &:not(:last-child) {
+                    border-bottom: 1px solid #dee2e6;
+                }
+
+                &:hover {
+                    background: $group-hover-bg-color;
+                }
+            }
+
+            td {
+                padding: $param-vertical-padding .25em;
+
+                &.name {
+                    >div {
+                        display: flex;
+
+                        >.fill {
+                            flex: 1;
+                            margin: 0 .5em;
+                            overflow: hidden;
+                            white-space: nowrap;
+                            background-image: $parameters-fill-image;
+                            background-repeat: repeat-x;
+                            background-position: left bottom;
+                        }
+                    }
+                }
+
+                &.value {
+                    width: 1%;
+                    white-space: nowrap;
+                }
+
+                &.unit {
+                    width: 1%;
+                    white-space: nowrap;
+                }
+            }
+        }
+
+        &.production-header {
+            border-bottom: 2px solid $customer-blue;
+
+            >td {
+                &.production-name {
+                    text-align: center;
+                }
+            }
+        }
+
+        &.param-header {
+            margin-top: .5em;
+            margin-bottom: .3em;
+            padding-left: 0 !important;
+            font-weight: bold;
+
+            .group-description {
+                &:not(:empty) {
+                    font-weight: normal;
+                    font-style: italic;
+                    padding-top: 1.5em;
+                    padding-bottom: 1em;
+                }
+
+                &:empty {
+                    display: none;
+                }
+            }
+
+            th {
+                padding: .75em .25em .5em .25em;
+            }
+        }
+
+        td {
+            &.price {
+                &:not(:first-child) {
+                    color: $customer-red;
+                    font-weight: bold;
+                    white-space: nowrap;
+                }
+            }
+
+            &.production-name {
+                width: 1%;
+                font-weight: bold;
+                font-size: .8rem;
+                padding-bottom: .75em;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+    }
+
+    .level-2 {
+        &.param-header {
+            th {
+                padding-left: 1em !important;
+            }
+        }
+
+        &.param-item {
+            td {
+                &:first-child {
+                    padding-left: 1em !important;
+                }
+            }
+        }
+
+        +.level-1 {
+            @include param-with-add-top-padding;
+        }
+    }
+
+    .level-3 {
+        &.param-item {
+            td {
+                &:first-child {
+                    padding-left: 2em !important;
+                }
+            }
+        }
+
+        +.level-1 {
+            @include param-with-add-top-padding;
+        }
+    }
+}

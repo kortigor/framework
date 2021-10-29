@@ -1,0 +1,80 @@
+// Grid Up to 6 cols
+
+// Breakpoints to shrink column numbers
+$grid-columns: ('1': 600px, //no grid
+    '2': 768px, // 2 columns
+    '3': 992px, // 3 columns
+    '4': 1024px, // 4 columns
+);
+
+.grid-wrapper {
+    display: grid;
+    gap: .5em;
+    overflow: hidden;
+
+    &.grid6 {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    &.grid5 {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    &.grid4 {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    &.grid3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    &.grid2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    &.fullwidth {
+        grid-template-columns: 1fr;
+    }
+
+    // reset cols to 4-column
+    @media (max-width: map-get($grid-columns, '4')) {
+
+        &.grid6,
+        &.grid5 {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    // reset cols to 3-column
+    @media (max-width: map-get($grid-columns, '3')) {
+
+        &.grid6,
+        &.grid5,
+        &.grid4 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    // reset cols to 2-column
+    @media (max-width: map-get($grid-columns, '2')) {
+
+        &.grid6,
+        &.grid5,
+        &.grid4,
+        &.grid3 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    // reset cols to fullwidth (1 column)
+    @media (max-width: map-get($grid-columns, '1')) {
+
+        &.grid6,
+        &.grid5,
+        &.grid4,
+        &.grid3,
+        &.grid2 {
+            grid-template-columns: 1fr;
+        }
+    }
+}

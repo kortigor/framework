@@ -1,0 +1,20 @@
+// Comments
+
+.user-comment {
+    margin-bottom: 1em;
+
+    .card-header {
+        span {
+            font-weight: bold;
+        }
+    }
+}
+
+.comments-block {
+    border-top: 1px solid #dee2e6;
+    margin-bottom: 1em;
+
+    h5 {
+        margin: 1em 0;
+    }
+}

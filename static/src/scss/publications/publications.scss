@@ -1,0 +1,101 @@
+// Publications formatting and TinyMCE styles
+
+@import "../variables";
+@import "../mixins";
+
+.mce-content-body {
+    padding: .5rem;
+}
+
+// clearfix to all paragraphs
+p {
+    &::after {
+        display: block;
+        clear: both;
+        content: '';
+    }
+}
+
+hr {
+    height: 1px;
+    border: 1px solid #eee;
+    margin: 5px 0;
+}
+
+figure {
+    display: inline-block;
+    margin: 0 .1rem 1rem 0;
+    vertical-align: top;
+}
+
+img {
+    vertical-align: initial;
+}
+
+a {
+    color: $publications-link-color;
+    text-decoration: none;
+    @include transition;
+
+    &:hover {
+        color: $customer-red;
+        text-decoration: underline;
+        outline: none;
+        @include transition;
+    }
+
+    &:focus {
+        color: $customer-red;
+        outline: none;
+        @include transition;
+    }
+
+    &.get-file {
+        display: block;
+        font-weight: bold;
+        color: $customer-red;
+        background-color: #f8f9fa;
+        padding: 1em;
+        border: dashed 1px $customer-red;
+        border-radius: .5em;
+        margin-bottom: 1em;
+        @include transition;
+
+        &:hover {
+            color: $customer-red;
+            background-color: #e8e9ea;
+            text-decoration: none;
+            @include transition;
+        }
+
+        &:focus {
+            color: $customer-red;
+            background-color: #e8e9ea;
+            @include transition;
+        }
+    }
+}
+
+.small {
+    font-size: .8em;
+    font-weight: normal;
+}
+
+.quote {
+    font-weight: normal;
+    background: #fff8dC;
+    border-radius: .5em;
+    border: 1px solid #f6f504;
+    padding: .5em .5em .5em 2em;
+    margin-bottom: 1em;
+    position: relative;
+
+    &:before {
+        content: "\f10d";
+        position: absolute;
+        font-family: "Font Awesome 5 Free";
+        font-weight: bold;
+        color: #666;
+        left: .6em;
+    }
+}

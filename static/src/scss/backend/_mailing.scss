@@ -1,0 +1,51 @@
+// Mailing
+
+@mixin subscribe-item {
+    width: 10px;
+    height: 10px;
+    margin: 0 1px 1px 0;
+
+    &.notsended {
+        background: var(--gray);
+    }
+
+    &.error {
+        background: var(--danger);
+    }
+
+    &.success {
+        background: var(--success);
+    }
+
+    &.processing {
+        background: var(--warning);
+    }
+}
+
+.subscribe-data {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+    padding: 1px 0 1px 1px;
+
+    div {
+        @include subscribe-item;
+    }
+}
+
+.subscribe-legend {
+    div {
+        display: inline-block;
+        @include subscribe-item;
+    }
+}
+
+#bulk-complete-indicator .badge,
+#bulk-sending-indicator .badge {
+    font-weight: normal !important;
+    font-size: 100% !important;
+}
+
+.bulk-send-progress {
+    font-weight: bold;
+}

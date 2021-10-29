@@ -1,0 +1,32 @@
+// Add "*" to labels of "required" form fields
+
+$required-asterick-color: #dc3545;
+
+form {
+    .form-group {
+        &.required {
+            label {
+                &:not(.custom-file-label) {
+                    &:after {
+                        content: '*';
+                        color: $required-asterick-color;
+                        font-weight: bolder;
+                        margin: 0 .3em;
+                    }
+                }
+
+                .custom-file-label {
+                    &:before {
+                        content: '*';
+                        position: absolute;
+                        right: 4px;
+                        top: 4px;
+                        color: $required-asterick-color;
+                        font-weight: bolder;
+                        z-index: 4;
+                    }
+                }
+            }
+        }
+    }
+}

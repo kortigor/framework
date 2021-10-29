@@ -1,0 +1,62 @@
+.form-signin {
+    width: 100%;
+    text-align: center;
+}
+
+.not-set {
+    color: #c55;
+    font-style: italic;
+}
+
+#notification-message {
+    text-align: center;
+    color: #fff;
+    background-color: #6c757d !important;
+    opacity: .9;
+    border-radius: .5em;
+    padding: 1.5em;
+    position: fixed;
+    top: 5%;
+    left: 40%;
+    z-index: 9999;
+}
+
+.tightest {
+    white-space: nowrap;
+    width: 1%;
+
+    > {
+
+        td,
+        th {
+            white-space: nowrap;
+            width: 1%;
+        }
+    }
+}
+
+.copy-to-clipboard {
+    cursor: pointer;
+}
+
+.elm-disabled {
+    opacity: .2 !important;
+    cursor: initial !important;
+}
+
+// Fancybox
+@media (min-width: 1200px) {
+
+    .fancybox-button--arrow_left svg,
+    .fancybox-button--arrow_right svg {
+        height: 150px !important;
+        width: 150px !important;
+    }
+
+    .fancybox-button--arrow_left,
+    .fancybox-button--arrow_right {
+        height: 230px !important;
+        width: 200px !important;
+        top: calc(50% - 115px) !important;
+    }
+}

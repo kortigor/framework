@@ -1,0 +1,146 @@
+// Production parameters form
+
+$input-min-width: 120px;
+$names-font-size: .875em;
+
+#productionParametersForm {
+
+    // remove validation signs
+    .form-control {
+
+        &.is-valid,
+        &.is-invalid {
+            background-image: none !important;
+            padding-right: 0 !important;
+        }
+    }
+
+    .row-parameter {
+        display: flex;
+        align-items: center;
+        margin-bottom: .5rem;
+    }
+
+    .parameter-name {
+        font-size: $names-font-size;
+        margin-right: auto;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        flex-basis: 33.3%;
+    }
+
+    .input-ru,
+    .input-en {
+        width: fit-content;
+        min-width: fit-content;
+        padding: 0 .25em;
+
+        &.input-group {
+            input {
+                width: $input-min-width;
+                min-width: $input-min-width;
+            }
+        }
+
+        &.sign {
+            width: fit-content;
+            min-width: fit-content;
+            white-space: nowrap;
+            padding: .3em .5em;
+            font-size: .875rem;
+            line-height: 1.5;
+            border-radius: .2rem;
+            background-color: #e9ecef;
+
+            &.unit {
+                margin-right: .75em;
+            }
+        }
+    }
+
+    .input-ru:nth-last-child(2),
+    .input-en:last-child {
+        margin-right: 0 !important;
+    }
+
+    .edit-separate {
+        display: flex;
+        align-items: center;
+
+        .input-ru,
+        .input-en {
+            width: $input-min-width;
+            min-width: $input-min-width;
+        }
+    }
+
+    .edit-common {
+        display: flex;
+        align-items: center;
+
+        .input-ru,
+        .input-en {
+            width: 100%;
+            min-width: initial;
+        }
+
+        input {
+            text-align: center;
+        }
+    }
+
+    .parameter-common-edit {
+        margin-right: .75em;
+    }
+
+    .group1-wrap {
+        flex-basis: 33.3%;
+        margin-left: 1em;
+    }
+
+    .group2-wrap {
+        flex-basis: 33.3%;
+        margin: 0 1em;
+    }
+
+    .same-production-names {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin-bottom: .75rem;
+
+        >.same-wrapper {
+            display: flex;
+            align-items: center;
+
+            >span {
+                font-size: $names-font-size;
+                font-weight: bold;
+                text-align: center;
+                width: $input-min-width;
+                min-width: $input-min-width;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                padding: 0 .25em;
+
+                &.active {
+                    a {
+                        color: $customer-red;
+                    }
+                }
+            }
+        }
+
+        .sign {
+            &.unit {
+                margin: 0 .75em 0 .5em;
+            }
+        }
+
+        .dummy-delete-plug {
+            width: 20px;
+        }
+    }
+}

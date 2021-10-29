@@ -1,0 +1,21 @@
+@mixin transition {
+    transition: all .3s ease 0s;
+}
+
+@mixin image-fluid {
+    max-width: 100% !important;
+    height: auto !important;
+}
+
+@mixin ancor-cust() {
+    a {
+        color: $customer-blue;
+        @include transition;
+
+        &:hover {
+            color: $customer-red;
+            text-decoration: none;
+            @include transition;
+        }
+    }
+}

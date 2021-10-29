@@ -1,0 +1,58 @@
+// Typeahead site search widget with grouped button
+
+$typeahead-border: #ced4da;
+
+.typeahead-search-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    position: relative;
+
+    >div {
+        flex: 1;
+    }
+
+    >button {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+
+        &:focus {
+            outline: none !important;
+            box-shadow: none !important;
+            border-color: $typeahead-border;
+        }
+    }
+
+    span {
+        &#searchPartButtonReset {
+            font-size: 16px;
+            color: #6c757d;
+            cursor: pointer;
+            position: absolute;
+            right: 55px;
+            top: 8px;
+            z-index: 100;
+        }
+    }
+
+    .tt-input {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border-right: 0px;
+        padding-right: 40px;
+
+        &:focus {
+            outline: none !important;
+            box-shadow: none !important;
+            border-color: $typeahead-border;
+        }
+    }
+
+    .tt-dataset {
+        overflow: hidden;
+    }
+
+    .tt-menu {
+        width: auto;
+    }
+}

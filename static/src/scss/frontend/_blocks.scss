@@ -1,0 +1,18 @@
+.fancybox-w-70pct {
+    .fancybox-content {
+        width: 70% !important;
+        height: auto !important;
+        min-width: 450px !important;
+
+        @media (max-width: $breakpoint-lg) {
+            width: 100% !important;
+            min-width: initial !important;
+            padding: 1em;
+        }
+    }
+}
+
+// https://stackoverflow.com/questions/44543157/how-to-hide-the-google-invisible-recaptcha-badge
+.grecaptcha-badge {
+    visibility: hidden;
+}

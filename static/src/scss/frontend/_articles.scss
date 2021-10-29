@@ -1,0 +1,34 @@
+.article-list {
+    li {
+        margin-bottom: 2em;
+
+        >h3 {
+            font-size: 1.5rem;
+        }
+
+        img {
+            max-width: 130px;
+            height: auto !important;
+        }
+
+        p {
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .announce {
+        overflow: auto;
+        margin-bottom: .5em;
+        clear: both;
+    }
+
+    .date {
+        opacity: .8;
+        font-size: .9rem;
+        clear: both;
+    }
+
+    @include ancor-cust;
+}

@@ -1,0 +1,41 @@
+// Colors
+$customer-blue: #27507e;
+$customer-red: #d74802;
+$ancor-red: #c12026;
+$text-gray-light: #6c757d;
+
+$publications-link-color: #2d72d9;
+
+$side-menu-hover-bg-color: #ccc;
+
+// Sizes
+
+// Site grid xl
+$site-grid-left-width-xl: 355px;
+$site-grid-right-width-xl: 270px;
+$site-grid-center-width-xl: minmax(340px, 750px);
+
+// Site grid lg
+$site-grid-left-width-lg: 205px;
+$site-grid-right-width-lg: 205px;
+$site-grid-center-width-lg: minmax(270px, 820px);
+
+$publications-header-size: 2rem;
+
+// Backgrounds
+$body-bg-image: url(/img/bg_main_gradient.png);
+$main-grid-bg-image: url(/img/bg_main_picture.png);
+
+
+// === Bootstrap variables
+
+// Breakpoints
+$breakpoint-xs: 0;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+// Pagination
+$pagination-hover-border-color: #dee2e6;
+$pagination-hover-bg: #e9ecef;

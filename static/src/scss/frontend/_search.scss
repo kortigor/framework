@@ -1,0 +1,15 @@
+#searchResult {
+    >h4 {
+        margin-top: 1.5em;
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+
+    h5 {
+        margin-top: .6em;
+    }
+
+    @include ancor-cust;
+}

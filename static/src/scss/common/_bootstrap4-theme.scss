@@ -1,0 +1,186 @@
+// Bootstrap 4 tuning
+
+$dropdown-hover-color: #e1e1e1;
+
+$navbar-light-color: rgba(0, 0, 0, .7);
+
+.input-group {
+    +.invalid-feedback {
+        display: block;
+    }
+}
+
+input {
+    &[type="checkbox"] {
+        &:disabled {
+            cursor: not-allowed;
+
+            +label {
+                &.custom-control-label {
+                    cursor: not-allowed;
+                }
+            }
+        }
+    }
+}
+
+label {
+    font-weight: bold;
+}
+
+.btn-light {
+    border: 1px solid #dee2e6;
+}
+
+a {
+    &.btn-light {
+        color: #007bff;
+    }
+}
+
+.form-check {
+    label {
+        font-weight: normal;
+        cursor: pointer;
+    }
+}
+
+.custom-control-label {
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.dropdown-item {
+    &:focus {
+        background-color: $dropdown-hover-color;
+    }
+
+    &:hover {
+        background-color: $dropdown-hover-color;
+    }
+}
+
+.nav-item {
+    &.dropdown {
+        &.show {
+            background-color: $dropdown-hover-color;
+        }
+    }
+
+    &.active {
+        background-color: $dropdown-hover-color;
+    }
+}
+
+.navbar-light {
+
+    .navbar-nav {
+        .nav-link {
+            color: $navbar-light-color;
+        }
+    }
+}
+
+.tab-pane {
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+}
+
+.nav-tabs {
+    >li {
+        >a {
+            color: #555;
+        }
+    }
+
+    .nav-item {
+        margin-bottom: 0;
+    }
+}
+
+.w-1 {
+    width: 1%;
+}
+
+table {
+
+    &.align-middle {
+
+        th,
+        td {
+            vertical-align: middle !important;
+        }
+    }
+
+    &.text-nowrap {
+        table-layout: fixed;
+
+        td {
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+
+    tr {
+        &.align-middle {
+            td {
+                vertical-align: middle !important;
+            }
+        }
+    }
+
+}
+
+.bd-callout {
+    padding: 1.25rem;
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+    border: 1px solid #eee;
+    border-left-width: .25rem;
+    border-radius: .25rem;
+
+    h4 {
+        margin-top: 0;
+        margin-bottom: .25rem;
+    }
+
+    p {
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    code {
+        border-radius: .25rem;
+    }
+
+    &.bd-callout-info {
+        border-left-color: #5bc0de;
+
+        h4 {
+            color: #5bc0de;
+        }
+    }
+
+    &.bd-callout-warning {
+        border-left-color: #f0ad4e;
+
+        h4 {
+            color: #f0ad4e;
+        }
+    }
+
+    &.bd-callout-danger {
+        border-left-color: #d9534f;
+
+        h4 {
+            color: #d9534f;
+        }
+    }
+
+    +.bd-callout {
+        margin-top: -.25rem;
+    }
+}

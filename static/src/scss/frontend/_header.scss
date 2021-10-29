@@ -1,0 +1,141 @@
+$head-darker-border-color: #9ea4aa;
+
+.head-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    font-size: 1.1rem;
+
+    address {
+        color: $customer-blue;
+        font-weight: 500;
+        margin: -25px 0 0 0;
+    }
+
+    @include ancor-cust();
+
+    @media (max-width: $breakpoint-lg) {
+        display: none;
+    }
+}
+
+.head-menu {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: auto;
+    background-color: transparent;
+
+    li {
+        list-style: none;
+    }
+
+    a {
+        flex: 1;
+        text-align: center;
+        font-weight: 600;
+        white-space: nowrap;
+        text-transform: uppercase;
+        color: $customer-blue;
+
+        &:hover {
+            text-decoration: none;
+            @include transition;
+        }
+    }
+
+    li.active {
+        >a {
+            color: $customer-red;
+            text-decoration: none !important;
+        }
+    }
+}
+
+.head-tools {
+    a {
+        color: $customer-blue !important;
+        text-decoration: none !important;
+        @include transition;
+
+        &:hover {
+            color: $ancor-red !important;
+            text-decoration: none !important;
+            outline: none !important;
+            @include transition;
+        }
+
+        &:focus {
+            color: $ancor-red !important;
+            text-decoration: none !important;
+            outline: none !important;
+            @include transition;
+        }
+    }
+
+    a#get-catalog {
+        color: #fff !important;
+    }
+
+    .nav-item {
+        position: relative;
+
+        span {
+            display: inline-block;
+            position: absolute;
+            top: 0px;
+            left: -8px;
+            font-size: .8em;
+            font-weight: bolder;
+            text-align: center;
+            white-space: nowrap;
+            line-height: 1em;
+            background-color: $customer-red;
+            color: #fff;
+            padding: .25em .45em;
+            border-radius: 1rem;
+            vertical-align: baseline;
+
+            &:empty {
+                display: none;
+            }
+        }
+    }
+}
+
+.head-search-wrapper {
+    flex: .7;
+}
+
+#ask-question-button {
+    border-color: $head-darker-border-color;
+}
+
+#searchFastOnSite {
+    border-color: $head-darker-border-color;
+}
+
+@media (max-width: $breakpoint-lg) {
+    .head-button-wrapper {
+        width: 49%;
+        display: inline-block;
+        margin: 1em 0;
+
+        >button,
+        >a {
+            width: 100%;
+            display: inline-block;
+            white-space: nowrap;
+        }
+    }
+
+    ul#headNav {
+        flex-direction: row;
+        justify-content: space-between;
+
+        >li {
+            margin: 1em;
+        }
+    }
+}

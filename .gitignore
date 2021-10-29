@@ -1,0 +1,39 @@
+# phpstorm project files
+.idea
+
+# netbeans project files
+nbproject
+
+# zend studio for eclipse project files
+.buildpath
+.project
+.settings
+
+# windows thumbnail cache
+Thumbs.db
+
+# mac DS_Store files
+.DS_Store
+
+# visual studio code project files
+.vscode
+
+# composer librarys, possible to reinstall it anytime
+/vendor
+
+# log files
+/log/*
+# but keep directory
+!/log/.gitkeep 
+
+# data files
+/data/**/*.*
+# but keep .htaccess, .git*
+!/data/**/.htaccess
+!/data/**/.git*
+
+# node.js modules and sourcemaps used only by development needs
+node_modules
+sourcemaps
+
+sitemap.xml

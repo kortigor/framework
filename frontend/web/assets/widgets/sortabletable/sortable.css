@@ -1,0 +1,19 @@
+.sort-handle {
+    cursor: grab;
+    text-align: center;
+    color: #17a2b8 !important;
+}
+
+.sort-placeholder td,
+.sort-placeholder {
+    margin: 50px;
+    background-color: #F6A504 !important;
+}
+
+div.sort-placeholder {
+    margin: 0;
+}
+
+.hidden-td {
+    display: none;
+}

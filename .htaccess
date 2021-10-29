@@ -1,0 +1,64 @@
+php_flag display_errors on
+php_value error_reporting 2047
+php_value output_buffering 4076
+
+AddDefaultCharset UTF-8
+Options All -Indexes
+Options FollowSymLinks
+DirectoryIndex index.php index.html
+RewriteEngine on
+
+# Redirect from "www" prefixed domain
+# RewriteCond %{HTTP_HOST} ^www.site.ru$ [NC]
+# RewriteRule ^(.*)$ https://site.ru/$1 [R=301,L,NE]
+
+# Redirect to https
+# RewriteCond %{HTTP_HOST} ^site.ru$ [NC]
+# RewriteCond %{HTTPS} !=on
+# RewriteRule ^(.*)$ https://site.ru/$1 [R=301,L,NE]
+
+RewriteRule /\. - [L,F]
+
+# handle a directory trailing slash, redirect to URI with trailing slash
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !\.
+RewriteCond %{REQUEST_URI} !/$
+RewriteCond %{REQUEST_URI} !(&)
+RewriteRule ^(.*)$ %{REQUEST_URI}/ [R=301,L,NE]
+
+# internal Redirect Loop Protection
+RewriteCond %{ENV:REDIRECT_STATUS} !^$
+RewriteRule ^ - [L]
+
+# don't rewrite for /data/ & /webhooks/ folders
+RewriteCond %{REQUEST_URI} ^/(data|webhooks)/
+RewriteRule ^ - [L]
+
+# define the app environment variable
+RewriteCond %{REQUEST_URI} !^/((frontend|backend)/web|admin)
+RewriteRule ^ - [E=APP:frontend]
+
+RewriteCond %{REQUEST_URI} (?!^/backend/web)^/admin
+RewriteRule ^ - [E=APP:backend]
+
+# rewrite the URI of the frontend app
+RewriteCond %{ENV:APP} =frontend
+RewriteRule ^ frontend/web%{REQUEST_URI}
+# if a directory or a file exists, use the request directly
+RewriteCond %{ENV:APP} =frontend
+RewriteCond %{REQUEST_FILENAME} !favicon
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+# otherwise forward the request to index.php
+RewriteRule ^ frontend/web/index.php [L]
+
+# rewrite the URI of the backend app
+RewriteCond %{ENV:APP} =backend
+RewriteRule ^admin/?(.*)$ backend/web/$1
+# if a directory or a file exists, use the request directly
+RewriteCond %{ENV:APP} =backend
+RewriteCond %{REQUEST_FILENAME} !favicon
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+# otherwise forward the request to index.php
+RewriteRule ^ backend/web/index.php [L]

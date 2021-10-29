@@ -1,0 +1,6 @@
+User-Agent: *
+Allow: /
+Disallow: /frontend/web
+Disallow: /backend/web
+Host: site.ru
+Sitemap: https://site.ru/sitemap.xml

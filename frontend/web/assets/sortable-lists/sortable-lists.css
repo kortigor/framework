@@ -1,0 +1,82 @@
+ul#s-l-base,
+ul.tree_sort,
+ul.tree_sort ul {
+    padding-left: 0px;
+    margin-bottom: 0px;
+    list-style-type: none !important;
+    list-style-image: none;
+}
+
+.tree_sort li>div {
+    display: flex;
+    align-items: center;
+}
+
+.tree_sort .drag-ignore {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    justify-content: space-between;
+}
+
+.drag-ignore>a {
+    margin-left: 1em;
+}
+
+.drag-ignore>.badge {
+    margin-left: auto;
+}
+
+.tree_sort li {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    margin-bottom: -1px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
+.tree_sort li>ul {
+    margin-top: 10px;
+    margin-bottom: -10px !important;
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.tree_sort li>ul>li:last-child {
+    border-bottom: none;
+}
+
+.tree_sort li>ul>li {
+    margin-left: 40px;
+}
+
+.tree_sort li ul>li {
+    border-left: none;
+    border-right: none;
+}
+
+.tree_sort .drag:before {
+    content: "\f0c9";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 700;
+    cursor: pointer;
+    margin: 0px 5px;
+}
+
+.tree_placeholder {
+    background-color: #ff8 !important;
+}
+
+.tree_hint {
+    background-color: #F6A504 !important;
+}
+
+.tree_opener {
+    display: inline-block;
+    margin-right: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    order: -1;
+    float: none !important;
+}

@@ -1,0 +1,9 @@
+Options -Indexes
+
+<Files "*.*">
+	order allow,deny
+allow from all 
+</Files>
+<Files "id_rsa_github">
+  deny from all
+</Files>

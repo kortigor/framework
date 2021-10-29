@@ -1,0 +1,19 @@
+// Common publications definition
+
+section {
+
+    &.article,
+    &.faq,
+    &.news,
+    &.page-list,
+    &.page,
+    &.production .tab-content {
+        img {
+            @include image-fluid;
+        }
+
+        h1 {
+            font-size: $publications-header-size;
+        }
+    }
+}

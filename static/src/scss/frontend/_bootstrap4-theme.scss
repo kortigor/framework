@@ -1,0 +1,82 @@
+// Bootstrap 4 tuning
+
+.fixed-top {
+    z-index: 10000;
+}
+
+.breadcrumb {
+    &.site-crumb {
+        font-size: .95rem;
+        background-color: initial !important;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+.breadcrumb-item {
+    &.active {
+        color: initial;
+        font-weight: bold;
+    }
+
+    @include ancor-cust;
+}
+
+.btn-primary {
+    background-color: $customer-blue;
+    border-color: $customer-blue;
+}
+
+.page-item {
+    &.active {
+        .page-link {
+            background-color: $customer-blue;
+            border-color: $customer-blue;
+        }
+    }
+}
+
+.page-link {
+    color: $customer-blue;
+}
+
+.btn-outline-primary {
+    border-color: $customer-blue;
+    color: $customer-blue;
+
+    &:not(:disabled):not(.disabled) {
+        &.active {
+            background-color: $customer-blue;
+            border-color: $customer-blue;
+        }
+
+        &.paginator-items-per-page {
+            &:not(.active) {
+                border-color: $pagination-hover-border-color;
+
+                &:hover {
+                    background-color: $pagination-hover-bg;
+                    color: $customer-blue;
+                    z-index: initial;
+                }
+            }
+        }
+    }
+}
+
+.nav-pills {
+    .show {
+        >.nav-link {
+            background-color: $customer-blue;
+            border: 1px solid $customer-blue;
+        }
+    }
+
+    a {
+        color: $customer-blue;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}

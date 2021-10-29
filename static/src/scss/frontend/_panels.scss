@@ -1,0 +1,65 @@
+.site-panel {
+    display: block;
+    position: relative;
+    width: 100%;
+    padding-bottom: 1em;
+}
+
+.site-panel-heading {
+    h4 {
+        opacity: .8;
+        margin-bottom: 1em;
+
+        #sideLeft & {
+            border-bottom: 2px solid #555;
+            padding-bottom: 1em;
+        }
+    }
+}
+
+.site-panel-body {
+    ul.nav.nav-pills.kv-sidenav {
+        white-space: normal;
+        overflow: initial;
+
+        >li {
+            >a {
+                color: $customer-blue;
+                display: block;
+                padding: .7em .9em !important;
+                margin-left: -.9em !important;
+                margin-right: -.9em !important;
+
+                &:hover {
+                    color: $customer-red !important;
+                    background-color: $side-menu-hover-bg-color !important;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+.side-border-left {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.ruler {
+    height: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-repeat: no-repeat;
+    background-image:
+        repeating-linear-gradient(90deg, #BECAD8 0, #BECAD8 1px, transparent 0, transparent 192px),
+        repeating-linear-gradient(90deg, #BECAD8 0, #BECAD8 1px, transparent 0, transparent 12px),
+        repeating-linear-gradient(90deg, #BECAD8 0, #BECAD8 1px, transparent 0, transparent 6px);
+    background-position: 100% 0, 100% 0, 100% 0;
+    background-size: 100% 15px, 100% 10px, 100% 8px;
+
+    &.ruler-high {
+        height: 40px;
+        background-size: 100% 25px, 100% 14px, 100% 12px;
+    }
+}

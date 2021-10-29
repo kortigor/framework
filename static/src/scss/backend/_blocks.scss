@@ -1,0 +1,86 @@
+// AdminLTE
+
+ul .nav.nav-treeview a {
+    font-size: .9em;
+}
+
+// prevent adminlte menu items to get wider than container
+.main-sidebar .nav-item {
+    max-width: 234px;
+}
+
+// timeleine use as comments list
+.comments-list-container {
+    .timeline-item {
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+    }
+
+    .time {
+        color: initial !important;
+        font-size: .8rem !important;
+    }
+
+    &.timeline {
+        margin-bottom: 0px !important;
+
+        &::before {
+            display: none !important;
+        }
+
+        >div {
+            margin-right: 0px !important;
+        }
+    }
+}
+
+// Tags
+
+.tag-list {
+    >* {
+        display: inline-block;
+        padding: .3rem .5rem;
+        background: #f3f3f3;
+        color: #999;
+        font-size: .9rem;
+        border-radius: 3px;
+        border: 1px solid #ddd;
+        margin: .2em .2em .2em 0;
+    }
+}
+
+// TinyMCE tuning
+
+.mce-fullscreen {
+    z-index: 10000 !important;
+}
+
+// MagicSuggest tuning
+
+.ms-helper-custom {
+    color: var(--primary) !important;
+    font-size: .9rem !important;
+    top: -25px !important;
+}
+
+.ms-sel-item-custom {
+    font-size: 1rem !important;
+    color: #333 !important;
+    margin-top: .5rem !important;
+    margin-right: .5rem !important;
+
+    .ms-close-btn {
+        background-position: 0 -14px !important;
+    }
+}
+
+// Select2 tuning
+
+.select2-container--krajee-bs4 {
+    .select2-results {
+        >.select2-results__options {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+    }
+}

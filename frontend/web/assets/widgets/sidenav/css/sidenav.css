@@ -1,0 +1,54 @@
+.kv-sidenav {
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    padding: 0;
+    margin: 0;
+}
+
+.kv-sidenav ul {
+    padding: 0;
+    margin: 0;
+}
+
+ul.kv-sidenav>li:not(:last-child) {
+    border-radius: 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.kv-sidenav .indicator {
+    float: right;
+    color: #999;
+    transition: transform ease-in-out .3s;
+}
+
+.kv-sidenav .active>a>span.indicator {
+    transform: rotate(-90deg);
+}
+
+.kv-sidenav .active>a {
+    color: #d74802;
+}
+
+.kv-sidenav .kv-toggle:hover,
+.kv-sidenav .active>.kv-toggle {
+    background-color: #f3f8fC;
+}
+
+.kv-sidenav .nav,
+.kv-sidenav .nav .nav {
+    display: none;
+}
+
+.kv-sidenav .nav a {
+    padding-left: 9%;
+}
+
+.kv-sidenav .nav .nav a {
+    padding-left: 18%;
+}
+
+.kv-sidenav .active>ul,
+.kv-sidenav .nav .active>ul {
+    display: block;
+}

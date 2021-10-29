@@ -1,0 +1,26 @@
+{
+  "name": "development_with_gulp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "devDependencies": {
+    "browser-sync": "^2.26.14",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-dart-sass": "^1.0.2",
+    "gulp-file-include": "^2.3.0",
+    "gulp-sass-bulk-importer": "^3.0.1",
+    "gulp-sourcemaps": "^3.0.0",
+    "require-dir": "^1.2.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "work": "gulp dev",
+    "build": "gulp sass_build"
+  },
+  "keywords": [],
+  "author": "kort",
+  "license": "ISC"
+}
